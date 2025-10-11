@@ -1,0 +1,91 @@
+@model SorveteriaApp.Application.DTOs.SaborCreateDto
+
+@{
+    ViewData["Title"] = "Novo Sabor";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">🍦 Cadastrar Novo Sabor</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Nome" class="form-label"></label>
+                            <input asp-for="Nome" class="form-control" placeholder="Ex: Morango" />
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Categoria" class="form-label">Cobertura</label>
+                            <select asp-for="Categoria" class="form-select">
+                                <option value="">Selecione uma cobertura</option>
+                                <option value="Frutas">Frutas</option>
+                                <option value="Chocolate">Chocolate</option>
+                                <option value="Cremoso">Cremoso</option>
+                                <option value="Especial">Especial</option>
+                                <option value="Diet">Diet</option>
+                                <option value="Zero Açúcar">Zero Açúcar</option>
+                                <option value="Caramelo">Caramelo</option>
+                                <option value="Morango">Morango</option>
+                                <option value="Doce de Leite">Doce de Leite</option>
+                            </select>
+                            <span asp-validation-for="Categoria" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CodigoProduto" class="form-label"></label>
+                            <input asp-for="CodigoProduto" class="form-control text-uppercase" 
+                                   placeholder="Ex: SOR0001" maxlength="7" />
+                            <small class="form-text text-muted">
+                                Formato: 3 letras maiúsculas + 4 números (ex: SOR0001)
+                            </small>
+                            <span asp-validation-for="CodigoProduto" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="PrecoPorKg" class="form-label"></label>
+                            <div class="input-group">
+                                <span class="input-group-text">R$</span>
+                                <input asp-for="PrecoPorKg" class="form-control" 
+                                       type="number" step="0.01" min="0.01" max="999.99" 
+                                       placeholder="0.00" />
+                            </div>
+                            <span asp-validation-for="PrecoPorKg" class="text-danger"></span>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i>
+                            <strong>Informação:</strong> O sabor será cadastrado como disponível por padrão.
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Voltar
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save"></i> Cadastrar Sabor
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        // Converter código do produto para maiúsculas automaticamente
+        document.querySelector('input[name="CodigoProduto"]').addEventListener('input', function(e) {
+            e.target.value = e.target.value.toUpperCase();
+        });
+    </script>
+}

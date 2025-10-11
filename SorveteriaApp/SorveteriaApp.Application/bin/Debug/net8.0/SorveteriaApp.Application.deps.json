@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SorveteriaApp.Application/1.0.0": {
+        "dependencies": {
+          "SorveteriaApp.Domain": "1.0.0"
+        },
+        "runtime": {
+          "SorveteriaApp.Application.dll": {}
+        }
+      },
+      "SorveteriaApp.Domain/1.0.0": {
+        "runtime": {
+          "SorveteriaApp.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SorveteriaApp.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SorveteriaApp.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

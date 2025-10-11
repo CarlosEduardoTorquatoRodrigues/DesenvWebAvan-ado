@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/SorveteriaApp.Web.props" />
+</Project>
