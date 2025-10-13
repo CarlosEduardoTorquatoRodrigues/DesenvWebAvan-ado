@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SorveteriaApp.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa763a3b806d5ad7a481677aef7264e93efd8f5f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8fa2fdc4fe24e52a213ef67c21f693d73d0c6cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("SorveteriaApp.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SorveteriaApp.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
